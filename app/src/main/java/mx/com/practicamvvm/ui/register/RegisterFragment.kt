@@ -14,7 +14,7 @@ import mx.com.practicamvvm.ui.register.viewmodel.RegisterViewModel
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
     private lateinit var binding:FragmentRegisterBinding
-    private val viewModel:RegisterViewModel by viewModels()
+    private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +27,8 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnRegister.setOnClickListener {
+        }
     }
 
 
