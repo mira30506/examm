@@ -2,7 +2,7 @@ package mx.com.practicamvvm.ui.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import dagger.hilt.android.AndroidEntryPoint
+
 
 
 
@@ -29,7 +29,6 @@ open class BaseActivity : AppCompatActivity() {
                 isLoaderVisible = true
             }
         } catch (e: Exception) {
-            //ERROR
         }
     }
 
@@ -44,5 +43,16 @@ open class BaseActivity : AppCompatActivity() {
             }
             isLoaderVisible = false
         }
+    }
+
+    fun showAlert(error:String){
+       val dialog= InfoDialog().apply {
+            txtMessageAlert=error
+        }
+        dialog.isCancelable = false
+        dialog.show(
+            this.supportFragmentManager,
+            "AlertDialog"
+        )
     }
 }

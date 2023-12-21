@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.welcome.WelcomeFragment">
-
-
-
-
-
     <Button
         android:id="@+id/btnLogin"
         style="@style/Widget.Material3.Button"
@@ -35,7 +30,7 @@
         android:layout_height="@dimen/dp56"
         android:layout_marginLeft="@dimen/dp28"
         android:layout_marginRight="@dimen/dp28"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="128dp"
         android:backgroundTint="@color/green"
         android:text="@string/login_with_google"
         android:textSize="@dimen/sp18"

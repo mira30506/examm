@@ -14,13 +14,13 @@
         android:theme="@style/Theme.PracticaMVVM"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.PracticaMVVM" />
+        <activity
             android:name=".ui.base.BaseActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.register.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.PracticaMVVM" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="true"

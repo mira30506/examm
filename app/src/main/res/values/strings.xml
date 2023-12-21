@@ -60,4 +60,7 @@
     <string name="confirm_email">Confirmar correo</string>
     <string name="confirm_password">Confirmar contraseña</string>
     <string name="register_user">Registrar</string>
+    <string name="accept">Aceptar</string>
+    <string name="error_message">Error message</string>
+    <string name="title_activity_home">HomeActivity</string>
 </resources>

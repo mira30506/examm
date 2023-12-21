@@ -17,9 +17,7 @@ class WelcomeViewModel @Inject constructor(private val repository: UserRepositor
     fun getAuthUser(email: String, password: String) {
         viewModelScope.launch {
             resultLogin.value = Resource.loading()
-            withContext(Dispatchers.IO) {
-                resultLogin.postValue(repository.authUser(email, password))
-            }
+            resultLogin.value=repository.authUser(email, password)
         }
     }
 }

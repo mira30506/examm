@@ -1,5 +1,6 @@
 package mx.com.practicamvvm.ui.welcome
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import mx.com.practicamvvm.databinding.FragmentWelcomeBinding
 import mx.com.practicamvvm.sys.utils.Resource
 import mx.com.practicamvvm.sys.utils.Status
 import mx.com.practicamvvm.ui.base.BaseActivity
+import mx.com.practicamvvm.ui.home.HomeActivity
 import mx.com.practicamvvm.ui.welcome.viewmodel.WelcomeViewModel
 
 
@@ -61,9 +63,13 @@ class WelcomeFragment : Fragment() {
             }
             Status.SUCCESS -> {
                 (activity as BaseActivity).dismissLoader()
+                (activity as WelcomeActivity).finish()
+                val intent=Intent(requireContext(),HomeActivity::class.java)
+                startActivity(intent)
             }
             Status.ERROR -> {
                 (activity as BaseActivity).dismissLoader()
+                (activity as BaseActivity).showAlert(result.message!!)
             }
         }
 

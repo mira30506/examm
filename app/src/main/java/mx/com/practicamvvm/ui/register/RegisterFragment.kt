@@ -30,10 +30,4 @@ class RegisterFragment : Fragment() {
         binding.btnRegister.setOnClickListener {
         }
     }
-
-
-    private fun initObservers(){
-
-    }
-
 }
