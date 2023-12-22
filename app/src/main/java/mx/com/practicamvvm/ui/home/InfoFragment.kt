@@ -5,10 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import mx.com.practicamvvm.R
+import mx.com.practicamvvm.data.local.model.ResultsModel
 import mx.com.practicamvvm.databinding.FragmentSecondBinding
+import mx.com.practicamvvm.ui.home.adapter.PageAdapter
 
+
+
+@AndroidEntryPoint
 class InfoFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
@@ -36,4 +43,6 @@ class InfoFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
+

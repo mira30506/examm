@@ -5,6 +5,8 @@ import kotlinx.coroutines.withContext
 import mx.com.practicamvvm.data.local.database.dao.DaoFacts
 import mx.com.practicamvvm.data.local.database.entity.Facts
 import mx.com.practicamvvm.data.local.database.mappers.FactsEntityMapper
+import mx.com.practicamvvm.data.local.mappers.FactsMapper
+import mx.com.practicamvvm.data.local.model.ResultsModel
 import mx.com.practicamvvm.data.remote.api.ApiService
 import mx.com.practicamvvm.data.remote.response.FactsResponse
 import mx.com.practicamvvm.sys.utils.Resource
@@ -20,7 +22,11 @@ class FactsRepository @Inject constructor(
 ) {
     suspend fun getPage(size:Int,page:Int)= withContext(Dispatchers.IO){
         var result= dao.getPage(size,size*page)
-        result
+        var list= mutableListOf<ResultsModel>()
+        result.forEach {
+            list.add(FactsMapper().map(it))
+        }
+        list
     }
     suspend fun getFacts() = withContext(Dispatchers.IO) {
         try {
