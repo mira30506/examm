@@ -3,26 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph2"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/ListFragment"
         android:name="mx.com.practicamvvm.ui.home.ListFragment"
         tools:layout="@layout/fragment_first">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_ListFragment_to_InfoFragment"
+            app:destination="@id/InfoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/InfoFragment"
         android:name="mx.com.practicamvvm.ui.home.InfoFragment"
         tools:layout="@layout/fragment_second">
-        <argument
-            android:name="ID"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

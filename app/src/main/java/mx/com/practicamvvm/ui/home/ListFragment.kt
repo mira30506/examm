@@ -95,6 +95,6 @@ class ListFragment : Fragment(), OnClickResult {
     override fun setOnClickListener(result: ResultsModel) {
         var bundle = Bundle()
         bundle.putString("ID", result.Id)
-         findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,bundle)
+         findNavController().navigate(R.id.action_ListFragment_to_InfoFragment,bundle)
     }
 }

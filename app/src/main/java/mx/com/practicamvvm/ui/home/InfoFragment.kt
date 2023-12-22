@@ -31,6 +31,7 @@ class InfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
     }
 
     override fun onDestroyView() {
@@ -40,7 +41,12 @@ class InfoFragment : Fragment() {
 
 
     private fun init(){
-        //viewModel.getFact()
+        val Id=arguments?.getString("ID")
+        viewModel.getFact(Id!!)
+        viewModel.resultLiveData.observe(viewLifecycleOwner){
+            databinding.model=it
+        }
+        databinding.btShare.setOnClickListener { sendData() }
     }
     private fun sendData() {
         var mensaje = "id : " + databinding.model!!.Id +
