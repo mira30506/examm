@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/WelcomeFragment"
         android:name="mx.com.practicamvvm.ui.welcome.WelcomeFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_WelcomeFragment_to_RegisterFragment"
@@ -19,7 +18,6 @@
     <fragment
         android:id="@+id/SplashFragment"
         android:name="mx.com.practicamvvm.ui.splash.SplashFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_SplashFragment_to_WelcomeFragment"
@@ -33,7 +31,6 @@
     <fragment
         android:id="@+id/RegisterFragment"
         android:name="mx.com.practicamvvm.ui.register.RegisterFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_register">
     </fragment>
 </navigation>

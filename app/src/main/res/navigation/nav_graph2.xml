@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="mx.com.practicamvvm.ui.home.ListFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -18,7 +17,6 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="mx.com.practicamvvm.ui.home.InfoFragment"
-        android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
         <argument
             android:name="ID"
