@@ -23,7 +23,10 @@
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_SplashFragment_to_WelcomeFragment"
-            app:destination="@id/WelcomeFragment" />
+            app:destination="@id/WelcomeFragment"
+            app:popUpTo="@id/SplashFragment"
+            app:popUpToInclusive="true"
+            />
     </fragment>
 
 
