@@ -1,10 +1,13 @@
 package mx.com.practicamvvm.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import mx.com.practicamvvm.databinding.FragmentSecondBinding
 
@@ -13,15 +16,16 @@ import mx.com.practicamvvm.databinding.FragmentSecondBinding
 class InfoFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
-    private val binding get() = _binding!!
+    private val databinding get() = _binding!!
 
+    private val viewModel:HomeViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
-        return binding.root
+        return databinding.root
 
     }
 
@@ -34,5 +38,42 @@ class InfoFragment : Fragment() {
         _binding = null
     }
 
+
+    private fun init(){
+        //viewModel.getFact()
+    }
+    private fun sendData() {
+        var mensaje = "id : " + databinding.model!!.Id +
+                " \n datainsert : " + databinding.model!!.dateInsert +
+                "\n slug : " + databinding.model!!.slug +
+                "\n columns : " + databinding.model!!.columns +
+                "\n fact : " + databinding.model!!.fact +
+                "\n organization : " + databinding.model!!.organization +
+                "\n resource : " + databinding.model!!.resource +
+                "\n url : " + databinding.model!!.url +
+                "\n operations : " + databinding.model!!.operations +
+                "\n dataset : " + databinding.model!!.operations +
+                "\n create_at:" + databinding.model!!.createdAt.toString()
+
+        var intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.`package` = "com.whatsapp"
+        if (databinding.model != null) {
+            intent.putExtra(
+                Intent.EXTRA_TEXT, mensaje
+            )
+        }
+        try {
+            requireActivity().startActivity(intent)
+        } catch (e: Exception) {
+            view?.let {
+                Snackbar.make(
+                    it,
+                    "El dispositivo no tiene WhatsApp instalado",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
 }
 

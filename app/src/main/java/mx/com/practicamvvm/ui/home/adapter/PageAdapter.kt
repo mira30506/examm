@@ -40,7 +40,7 @@ class PageAdapter(private val dataset: ArrayList<ResultsModel>, private val list
         holder.organization.text = dataset.get(position).organization
         holder.tvNmae.text = dataset.get(position).operations
         holder.mview.setOnClickListener {
-        // listener.setOnClickListner(dataset.get(position))
+         listener.setOnClickListener(dataset.get(position))
         }
 
     }

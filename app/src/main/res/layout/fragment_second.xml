@@ -1,35 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="model"
+            type="mx.com.practicamvvm.data.local.model.ResultsModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/previous"
-            app:layout_constraintBottom_toTopOf="@id/textview_second"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textview_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_second" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/id_result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.id}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/data_Insert_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.dateInsert}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/slug_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.slug}" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/colums_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.columns}" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/fact_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.fact}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/organization_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.organization}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/resource_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.resource}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/url_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.url}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/operation_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.operations}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/dataset_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.dataset}" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/created_at_Result" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{model.createdAt.toString()}" />
+
+
+            <Button
+                android:id="@+id/bt_share"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compartir por whast app " />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

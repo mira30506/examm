@@ -20,14 +20,15 @@ class FactsRepository @Inject constructor(
     private val service: ApiService,
     private val dao: DaoFacts
 ) {
-    suspend fun getPage(size:Int,page:Int)= withContext(Dispatchers.IO){
-        var result= dao.getPage(size,size*page)
-        var list= mutableListOf<ResultsModel>()
+    suspend fun getPage(size: Int, page: Int) = withContext(Dispatchers.IO) {
+        var result = dao.getPage(size, size * page)
+        var list = mutableListOf<ResultsModel>()
         result.forEach {
             list.add(FactsMapper().map(it))
         }
         list
     }
+
     suspend fun getFacts() = withContext(Dispatchers.IO) {
         try {
             val response = service.getValidateMessagesVersion()
@@ -40,6 +41,7 @@ class FactsRepository @Inject constructor(
             Resource.error(e.toString())
         }
     }
+
     suspend fun insertFacts(response: FactsResponse) {
         dao.delete()
         var list = mutableListOf<Facts>()
@@ -50,10 +52,13 @@ class FactsRepository @Inject constructor(
     }
 
     suspend fun getSearch(search: String) = withContext(Dispatchers.IO) {
-        var s="%"+search+"%"
-        var result=dao.getSearch(search)
+        var s = "%" + search + "%"
+        var result = dao.getSearch(search)
         result
     }
 
+    suspend fun getFact(Id: String) = withContext(Dispatchers.IO) {
+        FactsMapper().map(dao.getInfoResults(Id))
+    }
 
 }

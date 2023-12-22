@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import mx.com.practicamvvm.R
 import mx.com.practicamvvm.data.local.model.ResultsModel
 import mx.com.practicamvvm.databinding.FragmentFirstBinding
 import mx.com.practicamvvm.ui.home.adapter.PageAdapter
@@ -93,6 +95,6 @@ class ListFragment : Fragment(), OnClickResult {
     override fun setOnClickListener(result: ResultsModel) {
         var bundle = Bundle()
         bundle.putString("ID", result.Id)
-        // findNavController().navigate(R.id.action_nav_page_to_nav_result, bundle)
+         findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,bundle)
     }
 }

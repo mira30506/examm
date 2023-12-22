@@ -14,12 +14,19 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val factsRepository: FactsRepository):ViewModel() {
     val factsLiveData=MutableLiveData<List<ResultsModel>>()
+    var resultLiveData=MutableLiveData<ResultsModel>()
     var count=0
 
     fun getPage(){
         viewModelScope.launch {
             factsLiveData.value=factsRepository.getPage(SIZE_PAGE,count)
             count++
+        }
+    }
+
+    fun getFact(Id:String){
+        viewModelScope.launch {
+            resultLiveData.value=factsRepository.getFact(Id)
         }
     }
 }

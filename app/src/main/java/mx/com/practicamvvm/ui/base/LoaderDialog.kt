@@ -35,21 +35,4 @@ class LoaderDialog :DialogFragment() {
             RelativeLayout.LayoutParams.MATCH_PARENT
         )
     }
-/*
-    override fun onResume() {
-        super.onResume()
-        runCatching {
-            setImagesForAnimation()
-        }
-    }
-
-    override fun onPause() {
-        animationJSON.cancelAnimation()
-        super.onPause()
-    }
-
-
-    private fun setImagesForAnimation() {
-        animationJSON.resumeAnimation()
-    }*/
 }
